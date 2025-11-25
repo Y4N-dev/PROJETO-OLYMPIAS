@@ -1,0 +1,20 @@
+/* Layout para os campos do cartão alinhados em uma linha */
+.cadastro-form-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end; /* alinha labels/campos de maneira consistente */
+}
+.cadastro-form-row .cadastro-form-group {
+  flex: 1 1 0;
+}
+
+/* Em telas pequenas, empilha os campos novamente */
+@media (max-width: 600px) {
+  .cadastro-form-row {
+    display: block;
+  }
+  .cadastro-form-row .cadastro-form-group {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}

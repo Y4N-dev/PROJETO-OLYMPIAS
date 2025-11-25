@@ -1,0 +1,41 @@
+/* navbar.css - extra decorations & triangles without overlapping texts */
+/* keep within .painel-navbar scope to avoid global interference */
+
+.painel-navbar {
+  background: linear-gradient(90deg, rgba(0, 45, 0, 0.98), rgba(18, 72, 0, 0.98));
+  border-bottom: 3px solid rgba(255,255,255,0.03);
+  overflow:visible;
+}
+
+/* decorative triangles - behind the content */
+.painel-navbar::before,
+.painel-navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 0; /* keep behind */
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.painel-navbar::before {
+  left: 0;
+  width: 60%;
+  background: linear-gradient(90deg, var(--accent-yellow), transparent 70%);
+  clip-path: polygon(0 0, 70% 0, 0 110%);
+}
+
+.painel-navbar::after {
+  right: 0;
+  width: 18%;
+  background: linear-gradient(1000deg, var(--accent-blue), transparent);
+  clip-path: polygon(100% 0, 0 0, 100% 110%);
+}
+
+/* ensure actual navbar content is above decorations */
+.painel-navbar * { position: relative; z-index: 2; }
+
+/* navbar links placeholder (if you add nav links) */
+.nav-links{ display:flex; gap:20px; align-items:center; }
+.nav-links a{ color:var(--text); text-decoration:none; font-weight:600; }

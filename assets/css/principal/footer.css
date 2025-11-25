@@ -1,0 +1,31 @@
+/* =================== FOOTER ====================== */
+footer {
+  position: relative; /* remove o fixo */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: green !important;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  border-top: 4px solid yellow;
+  font-size: 0.9rem;
+  z-index: 10;
+  margin-top: auto; /* empurra para o fim da página */
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/*================ FOOTER =================*/
+footer {
+  border-top: 3px solid rgb(0, 0, 141);
+}

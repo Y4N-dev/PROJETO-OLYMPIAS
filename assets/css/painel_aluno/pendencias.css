@@ -1,0 +1,21 @@
+/* pendencias.css - centered card when there are none or list when there are */
+
+.pendencias-section {
+  padding:16px;
+  padding-top: calc(var(--nav-h) + 8px);
+  min-height: calc(100vh - var(--nav-h) - 40px);
+}
+
+.pend-card{
+  max-width:720px;
+  margin: 14px auto;
+  background: linear-gradient(180deg, rgba(22,18,20,0.9), rgba(18,16,16,0.92));
+  padding:32px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.02);
+  text-align:center;
+}
+
+.pend-card .icon{ font-size:40px; color:var(--accent-yellow); margin-bottom:10px; }
+.pend-card h2{ margin:6px 0 8px; color:var(--text); }
+.pend-card p{ color:var(--muted); margin:0; }

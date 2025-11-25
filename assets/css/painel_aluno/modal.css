@@ -1,0 +1,29 @@
+/* modal.css - organized modal to avoid "leaking" into sections */
+
+/* modal overlay already in global.css .modal-overlay; here the content box */
+.modal-box {
+  width: 420px;
+  max-width:calc(100% - 32px);
+  background: linear-gradient(180deg, #0f1720, #10141a);
+  color:var(--text);
+  padding:22px;
+  border-radius:10px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(255,255,255,0.03);
+  text-align:center;
+  z-index:1500;
+}
+
+/* close button */
+.modal-close{
+  position:absolute; top:12px; right:14px;
+  background:transparent; border:none; color:var(--muted); font-size:1.4rem; cursor:pointer;
+}
+
+/* QR image */
+.qr-fake{ width:210px; height:210px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,0.04); margin:8px auto; }
+
+/* states */
+.loading-area{ display:none; }
+.result-area{ display:none; }
+.modal-overlay.active .loading-area[aria-hidden="false"]{ display:block; }

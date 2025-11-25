@@ -1,0 +1,71 @@
+/* treinos.css - refined (keeps the design from earlier but aligned with theme) */
+
+.treinos-section {
+  padding:16px;
+  padding-top: calc(var(--nav-h) + 8px);
+}
+
+.treino-controles { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+#treinoNivel { padding:6px 12px; border-radius:8px; background:#111820; color:var(--text); border:1px solid rgba(255,255,255,0.02); }
+
+.treinos-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+}
+
+/* card */
+.treino-card{
+  background:linear-gradient(180deg, rgba(12,16,20,0.9), rgba(14,18,22,0.92));
+  padding:16px;
+  border-radius:10px;
+  box-shadow: var(--shadow-1);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.treino-card h3{ margin:0; font-size:1.1rem; }
+.tipo-treino{ color: yellow; font-weight:700; margin:8px 0; }
+
+.lista-exercicios li{ margin-bottom:6px; color:var(--muted); }
+
+/* status and btns */
+.status-treino { margin:8px 0; color: var(--accent-yellow); font-weight:600; }
+.btn-concluir-treino{
+  margin-top:10px; width:100%; padding:10px; border-radius:8px; background: green; color:#fff; border:none; cursor:pointer; transition:transform .12s;
+}
+.btn-concluir-treino:hover { transform: translateY(-2px); }
+
+/* concluded */
+.treino-concluido{
+  border: 1px solid rgba(255, 251, 0, 0.616);
+  background: linear-gradient(135deg, rgba(3,6,8,0.7), rgba(3,8,12,0.7));
+  box-shadow: 0 8px 32px rgba(200, 160, 0, 0.592);
+  animation: firePulse 1.8s infinite;
+}
+@keyframes firePulse{
+  0% { box-shadow: 0 0 0 rgba(200, 200, 0, 0.11); }
+  50% { box-shadow: 0 0 24px rgba(193, 200, 0, 0.766); }
+  100% { box-shadow: 0 0 0 rgba(255, 225, 0, 0.858); }
+}
+
+/* BOTÃO GERAR NOVO TREINO */
+.novo-treino-btn {
+    margin: 25px auto 40px;
+    display: block;
+    width: 260px;
+    padding: 14px;
+    background: #008d05;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .25s ease-in-out;
+    text-align: center;
+}
+
+.novo-treino-btn:hover {
+    background: #00e05a;
+    transform: translateY(-2px);
+}

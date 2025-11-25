@@ -1,0 +1,152 @@
+/* ===================== LOGIN ===================== */
+:root {
+  --navbar-height: 100px; /* altura real aproximada da navbar */
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(60vh - var(--navbar-height));
+  background: #1c1c1c;
+  color: #fff;
+  padding-top: var(--navbar-height); /* evita que o topo da caixa encoste na navbar */
+}
+
+.login-container {
+  background: #1c1c1c;
+  box-shadow: 0px 0px 10px 8px #111;
+  border: 2px solid #2ecc71;
+  border-radius: 12px;
+  padding: 40px 50px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.login-form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.login-form-group label {
+  color: #ccc;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus,
+.login-form input:hover {
+  border-color: #2ecc71;
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.4);
+  background: #303030;
+}
+
+/* Estilos para o campo de senha */
+.login-password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.login-password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.login-password-toggle:hover {
+  color: yellow;
+  text-shadow: 0 0 8px rgba(255, 200, 0, 0.4);
+}
+
+.login-password-toggle.visible i {
+  color: green;
+}
+
+/* Botão quando o campo está visível */
+.login-password-toggle.visible .bi-eye-slash {
+  color: green;
+  text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+.login-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.login-btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 15px auto;
+  padding: 10px;
+  background: #f1c40f;
+  border: none;
+  border-radius: 6px;
+  color: #111;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+  background: #2ecc71;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.login-alt {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.login-link-cadastro {
+  color: #4fa3ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-link-cadastro:hover {
+  color: #2ecc71;
+  text-decoration: underline;
+}

@@ -1,0 +1,161 @@
+/* ====== PÁGINA DE CONTATOS ====== */
+body{
+  background-color: #131313;
+}
+
+.contatos-container {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    color: white;
+    min-height: 100vh;
+}
+
+/* CARD PRINCIPAL */
+.contatos-card {
+    background: #212121;
+    border-left: 6px solid #2de200;
+    width: 100%;
+    max-width: 850px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+    position: relative;
+
+    opacity: 0;
+    transform: translateY(45px);
+    transition: all 0.8s ease;
+}
+
+.contatos-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TÍTULOS */
+.contatos-card h1 {
+    color: #e4ff00; /* amarelo neon */
+    margin-bottom: 14px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+/* INFORMAÇÕES */
+.contatos-info p {
+    font-size: 1.05rem;
+    margin: 10px 0;
+    color: #f2f2f2;
+}
+
+/* FORMULÁRIO */
+#contatoForm input,
+#contatoForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 14px;
+    border-radius: 10px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    font-size: 1rem;
+}
+
+#contatoForm input:focus,
+#contatoForm textarea:focus {
+    border-color: #2de200;
+    box-shadow: 0 0 6px rgba(45, 226, 0, 0.7);
+}
+
+#contatoForm textarea {
+    height: 150px;
+    resize: none;
+}
+
+.btn-enviar {
+    margin-top: 18px;
+    padding: 13px 22px;
+    background: linear-gradient(90deg, #2de200, #dfff00);
+    color: #111;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #38ff00, #ffff39);
+}
+
+/* POP-IN */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #ffffff;
+    color: #111;
+    padding: 28px;
+    text-align: center;
+    border-radius: 12px;
+    width: 330px;
+    border-top: 4px solid #2de200;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.modal-msg {
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+/* Botão Fechar */
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    color: #ff4444;
+    transform: scale(1.15);
+}
+
+.modal-btn {
+    background: #2de200;
+    border: none;
+    padding: 10px 18px;
+    color: #111;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.modal-btn:hover {
+    background: #38ff00;
+}

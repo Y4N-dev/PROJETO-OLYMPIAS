@@ -1,0 +1,96 @@
+/* ================================
+   LISTA DE NOTIFICAÇÕES
+================================ */
+.notificacoes-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/* Cada card */
+.notificacao-card {
+    background: #1b1f27;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin: 18px auto;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    border: 1px solid #252a33;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+    position: relative;
+    transition: 0.25s ease;
+}
+
+/* Barra lateral */
+.notificacao-card::before {
+    content: "";
+    width: 6px;
+    background: yellow; /* verde vibrante */
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+}
+
+/* Área interna */
+.notificacao-content {
+    margin-left: 10px;
+    flex: 1;
+}
+
+/* Título */
+.notificacao-titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* Linha de separação */
+.notificacao-divider {
+    height: 1px;
+    width: 100%;
+    background: #2d333d;
+    margin: 6px 0 10px 0;
+    border-radius: 2px;
+}
+
+/* Texto corpo */
+.notificacao-texto {
+    font-size: 0.95rem;
+    line-height: 1.45rem;
+    color: #d6d6d6; /* cinza claro */
+}
+
+/* Espaço entre cards já garantido pelo margin */
+
+/* Hover sutil */
+.notificacao-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.45);
+}
+
+/* Indicador da data */
+.notificacao-data {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #8f9aad;
+    text-align: right;
+}
+
+.notif-removidas-msg {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    background: #1b1b1b;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border-left: 4px solid #555;
+    opacity: 0.8;
+}
+

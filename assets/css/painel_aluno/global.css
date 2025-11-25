@@ -1,0 +1,175 @@
+/* global.css
+   Dark sofisticado — tema B
+   Paleta de acento: azul (primary), amarelo (accent), verde (success)
+*/
+
+:root{
+  /* core colors */
+  --bg: #0b100b;           /* page background */
+  --card: #162215;         /* card background */
+  --card-2: #1f291c;       /* alternate card */
+  --muted: #9aa4ad;
+  --text: #e6eef6;
+
+  /* accents */
+  --accent-blue: #1f6feb;  /* azul primário */
+  --accent-yellow: #f1c40f;/* amarelo */
+  --accent-green: #00c853; /* verde */
+
+  /* shadows / surfaces */
+  --shadow-1: 0 4px 18px rgba(3,6,12,0.6);
+  --glass: rgba(255,255,255,0.02);
+
+  /* spacing scale */
+  --gap-sm: 8px;
+  --gap: 16px;
+  --gap-lg: 24px;
+
+  /* sizes */
+  --nav-h: 70px;
+  --sidebar-w: 260px;
+}
+
+/* Reset + useful defaults */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout container */
+.painel-container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* NAVBAR (fixed) */
+.painel-navbar{
+  position:fixed;
+  top:0; left:0; right:0;
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  background: linear-gradient(90deg, rgba(12, 34, 12, 0.95), rgba(10, 20, 8, 0.95));
+  border-bottom: 3px solid rgba(255,255,255,0.04);
+  z-index:1200;
+  overflow:hidden;
+}
+
+/* animation container central */
+.navbar-animation{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  position:relative;
+  width:100%;
+  max-width:980px;
+}
+
+/* animated texts */
+.anim-text{
+  position:absolute;
+  font-weight:800;
+  font-size:2.2rem;
+  color:var(--text);
+  text-shadow: 10px 10px 10px 5px #9aa4ad;
+  text-shadow:0 6px 18px rgba(0,0,0,0.6);
+  transition:transform .6s ease, opacity .6s ease;
+  white-space:nowrap;
+}
+.anim-primary{ transform: translateY(0); opacity:1; left: 200px;}
+.anim-secondary{ transform: translateY(40px); opacity:0; right: 125px;}
+
+/* hamburger */
+.menu-toggle{
+  position:absolute;
+  left: -220px;
+  top:30%;
+  transform:translateY(-50%);
+  width:44px; height:38px;
+  display:flex; flex-direction:column; justify-content:center;
+  gap:6px;
+  background:transparent;
+  border:none;
+  z-index:1300;
+  cursor:pointer;
+  pointer-events:auto;
+}
+.menu-toggle .bar{
+  height:3px; border-radius:3px; background:var(--text);
+  width:28px; transition:all .25s ease;
+}
+.menu-toggle.active .bar:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(2){ opacity:0; transform: scale(0.6); }
+.menu-toggle.active .bar:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+/* SIDEBAR basics (left fixed) */
+.sidebar{
+  position:fixed;
+  top:var(--nav-h);
+  left:0;
+  width:var(--sidebar-w);
+  height:calc(100vh - var(--nav-h));
+  background:linear-gradient(180deg, var(--card), var(--card-2));
+  color:var(--text);
+  padding:12px 8px;
+  transform: translateX(-280px);
+  transition: transform .28s ease;
+  z-index:1100;
+  box-shadow: var(--shadow-1);
+}
+.sidebar.active{ transform:translateX(0); }
+body.sidebar-open .sidebar{ transform:translateX(0); }
+
+/* main content area space (keeps navbar visible) */
+.main-content{
+  margin-top: var(--nav-h);
+  padding: calc(var(--gap) + 6px);
+  transition: margin-left .28s ease;
+  min-height: calc(100vh - var(--nav-h));
+}
+.sidebar.active ~ .main-content,
+.sidebar-open .main-content { margin-left: var(--sidebar-w); }
+
+/* ensure sections don't overlap invisibly:
+   each .section MUST be position:relative and display:block when visible;
+   hidden sections should be display:none (JS controls this).
+*/
+.section{
+  position:relative;
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* modal base - hidden by default */
+.modal-overlay{
+  position:fixed; inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background: rgba(3,6,12,0.65);
+  z-index:1400;
+}
+.modal-overlay.active{ display:flex; }
+
+/* small helpers */
+.centered {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* utility spacing */
+.h-gap{ margin-top:var(--gap); }
+.small{ font-size:.9rem; color:var(--muted); }

@@ -1,0 +1,71 @@
+/*================ CARDS =================*/
+/* Estilo para a seção de unidades */
+.row.g-4 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Ajustes específicos para cards de unidades */
+.row.g-4 .col-md-4 {
+  padding: 8px;
+}
+
+.row.g-4 .card {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.row.g-4 .card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motiv-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/*================ TEXTOS =================*/
+.text-dark {
+  color: white!important;
+}
+.text-muted {
+  color: white !important;
+}
+
+/*================ BOTÕES =================*/
+.btn-warning {
+  background-color: yellow;
+  border: none;
+  color: #111;
+  font-weight: bold;
+}
+.btn-warning:hover {
+  background-color: green;
+}

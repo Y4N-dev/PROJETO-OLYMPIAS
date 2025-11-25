@@ -1,0 +1,69 @@
+/* ============================
+   MEU CADASTRO
+============================ */
+
+.section[data-section="meu_cadastro"] {
+    padding: 90px 20px 30px;
+    color: #fff;
+}
+
+.mc-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mc-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* ---- CARD ---- */
+.mc-card {
+    background: #0e0f11;
+    padding: 22px;
+    border-radius: 12px;
+    border-left: 4px solid #0055ff; /* azul */
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+.mc-card h3 {
+    margin-bottom: 14px;
+    color: #ffd000; /* amarelo */
+    font-size: 1.3rem;
+}
+
+/* ---- LINHAS DE INFORMAÇÕES ---- */
+.mc-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 10px; /* espaço para a linha fina */
+}
+
+/* linha fina escura abaixo de cada span.label, com 10px de folga nas extremidades do card */
+.mc-row .label::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background: #2b2b2b;
+    bottom: 4px; /* distância entre o texto e a linha; ajuste se precisar */
+    pointer-events: none;
+}
+.mc-row .label {
+    color: #aaa;
+}
+
+.mc-row .value {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Gênero */
+.mc-card p strong {
+    color: #00ff55;
+}

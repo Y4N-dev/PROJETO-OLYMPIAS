@@ -1,0 +1,35 @@
+/* pagamentos.css - cards for parcelas and statuses */
+
+.pagamentos-section {
+  padding:16px;
+  padding-top: calc(var(--nav-h) + 8px);
+}
+
+/* container of list */
+.parcelas-list { display:flex; flex-direction:column; gap:12px; }
+
+/* parcela card */
+.parcela-card{
+  padding:12px 14px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(16,18,20,0.9), rgba(10,12,14,0.9));
+  border:1px solid rgba(255,255,255,0.02);
+  box-shadow: var(--shadow-1);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.parcela-meta{ display:flex; flex-direction:column; gap:4px; color:var(--muted); }
+.parcela-meta .venc{ color:var(--text); font-weight:700; }
+.parcela-actions{ display:flex; align-items:center; gap:8px; }
+
+/* status */
+.badge{ padding:6px 10px; border-radius:8px; font-weight:700; font-size:.85rem; color:#fff; }
+.badge.pago{ background: linear-gradient(90deg, rgba(0,200,83,0.18), rgba(0,200,83,0.08)); color:var(--accent-green); }
+.badge.aguardando{ background: rgba(255,255,255,0.02); color:var(--muted); border:1px solid rgba(255,255,255,0.02); }
+.badge.pendente{ background: linear-gradient(90deg, rgba(241,196,15,0.10), rgba(241,196,15,0.05)); color:var(--accent-yellow); }
+
+/* action button */
+.btn-pagar{ background:var(--accent-blue); color:#fff; padding:8px 12px; border-radius:8px; border:none; cursor:pointer; }
+.btn-pagar[disabled]{ opacity:.45; cursor:not-allowed; background:rgba(255,255,255,0.03); }
+
+/* small note for payments */
+.pay-note{ color:var(--muted); font-size:.9rem; margin-top:8px; }

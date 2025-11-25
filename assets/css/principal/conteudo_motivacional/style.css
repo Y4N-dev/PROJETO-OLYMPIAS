@@ -1,0 +1,118 @@
+/* ================= SEÇÃO MOTIVACIONAIS ================= */
+.motivacionais {
+  width: 100%;
+  background: transparent;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivacionais-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap; /* permite adaptação no mobile */
+}
+
+/* ======== LADO ESQUERDO: TEXTO ======== */
+.motiv-text {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  text-align: left;
+  color: rgb(255, 247, 0);
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.9s ease-out;
+}
+
+.motiv-text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.motiv-title {
+  color: var(--cor-amarelo);
+  text-shadow: 0 0 15px rgba(255, 200, 0, 0.6);
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.motiv-desc {
+  color: #eaeaea;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ======== LADO DIREITO: IMAGENS ======== */
+.motiv-galeria {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  justify-items: center;
+  align-items: center;
+}
+
+.motiv-card {
+  width: 100%;
+  max-width: 260px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.motiv-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motiv-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Garante que o conteúdo não desapareça caso o JS falhe */
+.motiv-text,
+.motiv-card,
+.card,
+.detalhes-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.motiv-text.visible,
+.motiv-card.visible,
+.card.visible,
+.detalhes-card.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 992px) {
+  .motivacionais-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .motiv-text {
+    text-align: center;
+    transform: translateY(40px);
+  }
+  .motiv-galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

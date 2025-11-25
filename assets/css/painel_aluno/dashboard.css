@@ -1,0 +1,146 @@
+/* dashboard.css - cards and weekly frequency visualization */
+
+.section[data-section="dashboard"]{
+  padding:16px;
+  padding-top: calc(var(--nav-h) + 12px); /* garante proximidade com navbar */
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* card base */
+.dash-card{
+  background: linear-gradient(180deg, rgba(20,28,34,0.95), rgba(14,18,22,0.95));
+  padding:18px;
+  border-radius:12px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* grid layout for top area if needed */
+.dash-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+}
+
+/* WELCOME */
+.welcome-card h2{ font-size:1.5rem; margin:0 0 6px; }
+.welcome-card span{ color:var(--accent-yellow); }
+
+/* PLAN CARD */
+.plan-card strong{ color:var(--accent-green); }
+
+/* FREQUENCY - simplified, equal baseline bars */
+.progress-card{ padding-bottom:8px; }
+.progress-bars{
+  display:flex;
+  gap:12px;
+  align-items:end;
+  justify-content:space-between;
+  padding:12px 4px;
+}
+
+/* CREATE equal baseline for all bars and animated fill */
+.progress-bars .bar{
+  flex:1;
+  min-height: 96px;
+  max-width: 120px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+  border-radius:10px;
+  position:relative;
+  overflow:visible;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom:10px;
+}
+
+/* inner fill (so baseline is consistent and visible) */
+.progress-bars .bar .fill{
+  width:86%;
+  height:10%;
+  background:#6b6b6b;
+  border-radius:8px;
+  transition: height .45s cubic-bezier(.2,.9,.3,1), background .25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.45) inset;
+}
+
+/* states — maps to percentages */
+.fill.level-0{ height: 10%; background:#6b6b6b; }
+.fill.level-1{ height: 20%; background:var(--accent-yellow); }
+.fill.level-2{ height: 40%; background: var(--accent-yellow); }
+.fill.level-3{ height: 60%; background: var(--accent-blue); }
+.fill.level-4{ height: 80%; background: var(--accent-blue); }
+.fill.level-5{ height:100%; background: var(--accent-green); }
+
+/* day labels */
+.progress-bars .bar .day{
+  position:absolute;
+  bottom:-20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+/* small note */
+.freq-info { margin-top:10px; color:var(--muted); font-size:.9rem; }
+
+/* TREINO CARD in dashboard small */
+.treino-card small{ color:var(--muted); }
+
+/* responsiveness */
+@media (max-width:720px){
+  .progress-bars { gap:8px; }
+  .progress-bars .bar { max-width:80px; min-height:68px; }
+}
+
+/* ===============================
+   DASHBOARD – FREQUENCIA SEMANAL
+=============================== */
+
+.freq-bars {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px; /* mais espaçamento */
+    padding: 10px 5px;
+}
+
+.freq-col {
+    flex: 1;
+    text-align: center;
+}
+
+/* Coluna (barra) mais grossa */
+.freq-bar {
+    background: #1a1a1a;
+    height: 150px; /* mais alta */
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 80%; /* deixa ela mais larga */
+}
+
+/* Barra interna que sobe */
+.freq-bar-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 12px;
+    transition: height .3s ease;
+}
+
+/* Cores técnicas (por classe aplicada via PHP) */
+.fb-red    { background: #ff3b3b; }
+.fb-yellow { background: #ffd000; }
+.fb-green  { background: #00ff55; }
+
+/* Nome do dia */
+.freq-label {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ddd;
+}

@@ -1,0 +1,31 @@
+:root {
+  --navbar-height: 100px;
+}
+
+body {
+  background-color:#1c1c1c;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  padding-top: var(--navbar-height); /* mantém o espaçamento da navbar fixa */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+/*================ BASE =================*/
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: green !important;
+}
+
+.text-warning {
+  color: yellow;
+  text-shadow: 0 0 15px rgba(255, 200, 0, 0.6);
+  font-weight: bold;
+}
+
+.bem-vindo-olympias {
+  color: green;
+  text-shadow: 0px 1px 5px green;
+}
